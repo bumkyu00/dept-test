@@ -3,13 +3,13 @@ import axios from 'axios';
 
 class App extends Component {
   state = {
-    text: ""
+    text: "default"
   }
   componentDidMount() {
     this.getText();
   }
   getText() {
-    axios.get('http://localhost:3000/main/')
+    axios.get('/main')
       .then(response => this.setState({text: response.data}))
       .catch(err => console.log(err));
   }
